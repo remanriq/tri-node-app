@@ -34,7 +34,6 @@ default:
 function movieThis(){
 var movieName = process.argv[3];
 
-if(movieName = pr
 
 
 console.log(movieName);
@@ -61,9 +60,30 @@ request(queryUrl, function(error, response, body) {
 
 };
  
+
  
 
-// function myTweets(){
+function myTweets(){
+var myTweets = process.argv[3]; 
+
+// var client = new Twitter({
+//   consumer_key: '',
+//   consumer_secret: '',
+//   access_token_key: '',
+//   access_token_secret: ''
+// });
+
+
+
+console.log(myTweets);
+
+var params = {screen_name: 'rosalitalokita'};
+client.get('statuses/user_timeline', params, function(error, tweets, response) {
+  if (!error) {
+    console.log(tweets);
+  }
+});
+};
 
 
 // var myTweets = new twitter;
